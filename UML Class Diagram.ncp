@@ -1,0 +1,209 @@
+<Project>
+  <Name>UML Class Diagram</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Options2Project</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>AntFoodForm</Name>
+        <Access>Public</Access>
+        <Location left="806" top="99" />
+        <Size width="363" height="723" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;AntAgent&gt; antList</Member>
+        <Member type="Field">int antRadius</Member>
+        <Member type="Field">Bitmap backgroundImage</Member>
+        <Member type="Field">int closeProximityTo</Member>
+        <Member type="Field">ICountainer components</Member>
+        <Member type="Field">Button createAntsButton</Member>
+        <Member type="Field">Button createRobberAntsButton</Member>
+        <Member type="Field">Panel drawingPanel</Member>
+        <Member type="Field">List&lt;Nest&gt; nestList</Member>
+        <Member type="Field">RadioButton nestRadioButton</Member>
+        <Member type="Field">Random randomNumberGenerator</Member>
+        <Member type="Field">List&lt;RobberAntAgent&gt; robberAntList</Member>
+        <Member type="Field">List&lt;RobberNest&gt; robberNestList</Member>
+        <Member type="Field">RadioButton robberNestRadioButton</Member>
+        <Member type="Field">Button startButton</Member>
+        <Member type="Field">Button stopButton</Member>
+        <Member type="Field">Timer timer</Member>
+        <Member type="Method">public void AntFoodForm()</Member>
+        <Member type="Method">private void AskForDirections(int antID, int subAnt)</Member>
+        <Member type="Method">private void AskForTheftDirections(int robberAntID, int subAnt)</Member>
+        <Member type="Method">private void CreateAnts(int quantity)</Member>
+        <Member type="Method">private void createAntsButton_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void CreateBackgroundImage()</Member>
+        <Member type="Method">private void CreateRobberAnts(int quantity)</Member>
+        <Member type="Method">private void createRobberAntsButton_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void DestroyFood(int antID, int foodID)</Member>
+        <Member type="Method">private void Dispose(bool disposing)</Member>
+        <Member type="Method">private void DrawAgents()</Member>
+        <Member type="Method">private void DrawAgentDoubleBuffering()</Member>
+        <Member type="Method">private void DrawingPanle_MouseClick(object sender, MouseEventArgs e)</Member>
+        <Member type="Method">private void InitializeComponent()</Member>
+        <Member type="Method">private void PickupFood(int antID, int foodID)</Member>
+        <Member type="Method">private void PutDownFood(int antID)</Member>
+        <Member type="Method">private void PutDownStolenFood(int robberAntID)</Member>
+        <Member type="Method">private void startButton_Click(object sender, EventArgs e)</Member>
+        <Member type="Method">private void StealFood(int robberAntID, int antID)</Member>
+        <Member type="Method">private void stopButton_Click(object sendeer, EvenArgs e)</Member>
+        <Member type="Method">private void timer_Tick(object sender, EventArgs e)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AntAgent</Name>
+        <Access>Public</Access>
+        <Location left="1090" top="912" />
+        <Size width="390" height="468" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">SOFT152Vector agentPosition</Member>
+        <Member type="Field">Random randomNumberGenerator</Member>
+        <Member type="Field">SOFT152Vector wanderPosition</Member>
+        <Member type="Field">Rectangle worldBounds</Member>
+        <Member type="Property">public SOFT152Vector AgentPosition { get; set; }</Member>
+        <Member type="Property">public double AgentSpeed { get; set; }</Member>
+        <Member type="Property">public double ApproachRadius { get; set; }</Member>
+        <Member type="Property">public double AvoidDistance { get; set; }</Member>
+        <Member type="Property">public bool HasFood { get; set; }</Member>
+        <Member type="Property">public bool KnowsFoodLocation { get; set; }</Member>
+        <Member type="Property">public bool KnowsNestLocation { get; set; }</Member>
+        <Member type="Property">public bool ShouldStayInWorldBounds { get; set; }</Member>
+        <Member type="Property">public int SpecificFood { get; set; }</Member>
+        <Member type="Property">public int SpecificNest { get; set; }</Member>
+        <Member type="Property">public double WanderLimits { get; set; }</Member>
+        <Member type="Constructor">public AntAgent()</Member>
+        <Member type="Constructor">public AntAgent(SOFT152Vector position, Random random)</Member>
+        <Member type="Constructor">public AntAgent(SOFT152Vector position, Random random, Rectangle bounds)</Member>
+        <Member type="Method">public void Approach(SOFT152Vector objectPosition)</Member>
+        <Member type="Method">public void FleeFrom(SOFT152Vector objectPosition)</Member>
+        <Member type="Method">public void InitializeAgent()</Member>
+        <Member type="Method">public void StayInWorld()</Member>
+        <Member type="Method">public void Wander()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RobberAntAgent</Name>
+        <Access>Public</Access>
+        <Location left="1366" top="278" />
+        <Size width="425" height="519" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">SOFT152Vector agentPosition</Member>
+        <Member type="Field">Random randomNumberGenerator</Member>
+        <Member type="Field">SOFT152Vector wanderPosition</Member>
+        <Member type="Field">Rectangle worldBounds</Member>
+        <Member type="Property">public SOFT152Vector AgentPosition { get; set; }</Member>
+        <Member type="Property">public double AgentSpeed { get; set; }</Member>
+        <Member type="Property">public double ApproachRadius { get; set; }</Member>
+        <Member type="Property">public double AvoidDistance { get; set; }</Member>
+        <Member type="Property">public int FoodPosX { get; set; }</Member>
+        <Member type="Property">public int FoodPosY { get; set; }</Member>
+        <Member type="Property">public bool HasFood { get; set; }</Member>
+        <Member type="Property">public bool KnowsFoodLocation { get; set; }</Member>
+        <Member type="Property">public bool KnowsNestLocation { get; set; }</Member>
+        <Member type="Property">public int RobberAntCounter { get; set; }</Member>
+        <Member type="Property">public bool ShouldStayInWorldBounds { get; set; }</Member>
+        <Member type="Property">public int SpecificFood { get; set; }</Member>
+        <Member type="Property">public int SpecificNest { get; set; }</Member>
+        <Member type="Property">public double WanderLimits { get; set; }</Member>
+        <Member type="Constructor">public RobberAntAgent()</Member>
+        <Member type="Constructor">public RobberAntAgent(SOFT152Vector position, Random random)</Member>
+        <Member type="Constructor">public RobberAntAgent(SOFT152Vector position, Random random, Rectangle bounds)</Member>
+        <Member type="Method">public void Approach(SOFT152Vector objectPosition)</Member>
+        <Member type="Method">public void FleeFrom(SOFT152Vector objectPosition)</Member>
+        <Member type="Method">public void InitializeAgent()</Member>
+        <Member type="Method">public void StayInWorld()</Member>
+        <Member type="Method">public void Wander()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Nest</Name>
+        <Access>Public</Access>
+        <Location left="990" top="1450" />
+        <Size width="237" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public SOFT152Vector NestPosition { get; set; }</Member>
+        <Member type="Property">public int NestSize { get; set; }</Member>
+        <Member type="Constructor">public Nest()</Member>
+        <Member type="Constructor">public Nest(SOFT152Vector position)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RobberNest</Name>
+        <Access>Public</Access>
+        <Location left="725" top="1047" />
+        <Size width="237" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public SOFT152Vector NestPosition { get; set; }</Member>
+        <Member type="Property">public int NestSize { get; set; }</Member>
+        <Member type="Constructor">public RobberNest()</Member>
+        <Member type="Constructor">public RobberNest(SOFT152Vector position)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Food</Name>
+        <Access>Public</Access>
+        <Location left="512" top="1345" />
+        <Size width="239" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public SOFT152Vector FoodPosition { get; set; }</Member>
+        <Member type="Property">public int NestSize { get; set; }</Member>
+        <Member type="Constructor">public Food(SOFT152Vector position)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="2" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="3">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1291</X>
+          <Y>887</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1194</X>
+          <Y>194</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="0" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>774</X>
+          <Y>769</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
